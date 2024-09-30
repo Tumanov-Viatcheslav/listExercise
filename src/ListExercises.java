@@ -24,11 +24,13 @@ public class ListExercises {
     public static void main(String[] args) {
         List<Double> list = read("input.txt");
         Double el;
+        int counter = 0;
         for (int i = 0; i < list.size(); i++) {
             el = list.get(i);
             if (el < 0) {
                 list.remove(i);
-                list.addFirst(el);
+                list.add(counter, el);
+                counter++;
             }
         }
         System.out.println(list);
