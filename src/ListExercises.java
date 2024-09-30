@@ -7,7 +7,14 @@ public class ListExercises {
     private static List<Double> read(String fileName) {
         List<Double> list = null;
         try (BufferedReader input = new BufferedReader(new FileReader(fileName))) {
-            list = new ArrayList<>(Arrays.stream(input.readLine().replace(',', '.').split("; ")).map(Double::parseDouble).toList());
+            list = new ArrayList<>(Arrays.stream(
+                    input.readLine()
+                            .replace(',', '.')
+                            .split("; ")
+                    )
+                    .map(Double::parseDouble)
+                    .toList()
+            );
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
